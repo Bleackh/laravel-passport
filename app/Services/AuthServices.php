@@ -48,8 +48,8 @@ class AuthServices
 
         $tokenRequest = Request::create('/oauth/token', 'POST', [
             'grant_type'    => 'password',
-            'client_id'     => env('CLIENT_ID'),
-            'client_secret' => env('CLIENT_SECRET'),
+            'client_id'     => env('PASSPORT_CLIENT_ID'),
+            'client_secret' => env('PASSPORT_CLIENT_SECRET'),
             'username'      => $request->email,
             'password'      => $request->password,
             'scope'         => '',
@@ -105,8 +105,8 @@ class AuthServices
         $tokenRequest = Request::create('/oauth/token', 'POST', [
             'grant_type'    => 'refresh_token',
             'refresh_token' => $request->refresh_token,
-            'client_id'     => env('CLIENT_ID'),
-            'client_secret' => env('CLIENT_SECRET'),
+            'client_id'     => env('PASSPORT_CLIENT_ID'),
+            'client_secret' => env('PASSPORT_CLIENT_SECRET'),
             'scope'         => '',
         ]);
 
